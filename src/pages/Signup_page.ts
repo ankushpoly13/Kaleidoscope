@@ -34,9 +34,6 @@ export class SignUp {
     };
   }
 
-  /**
-   * Fill out and submit the sign-up form
-   */
   async createAccount(): Promise<void> {
     await this.waitForPageLoad();
     await this.fillSignUpForm(testData.signupData);
@@ -44,9 +41,6 @@ export class SignUp {
     await this.submitForm();
   }
 
-  /**
-   * Wait for the sign-up page to load
-   */
   private async waitForPageLoad(): Promise<void> {
     await this.locators.lastName.waitFor({
       timeout: SignUp.DEFAULT_TIMEOUT,
@@ -54,9 +48,6 @@ export class SignUp {
     });
   }
 
-  /**
-   * Fill out the sign-up form with provided data
-   */
   private async fillSignUpForm(data: SignUpFormData): Promise<void> {
     const { firstName, lastName, mobileNumber, password } = this.locators;
 
@@ -66,16 +57,10 @@ export class SignUp {
     await password.fill(data.password);
   }
 
-  /**
-   * Accept terms by checking the age confirmation checkbox
-   */
   private async acceptTerms(): Promise<void> {
     await this.locators.ageCheckbox.check();
   }
 
-  /**
-   * Submit the sign-up form
-   */
   private async submitForm(): Promise<void> {
     await this.locators.submit.click();
   }
