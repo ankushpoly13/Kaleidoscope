@@ -1,0 +1,18 @@
+{
+  "name": "sdetautomationchallenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "Aakash Paliwal",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@faker-js/faker": "^9.2.0",
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.0"
+  },
+  "dependencies": {
+    "path": "^0.12.7"
+  }
+}
